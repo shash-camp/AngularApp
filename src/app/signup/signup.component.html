@@ -1,0 +1,36 @@
+<div class="signup-container">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+    <h2>Create Account</h2>
+
+    <label>Full Name:</label>
+    <input type="text" formControlName="fullName" />
+    <div *ngIf="signupForm.get('fullName')?.invalid && signupForm.get('fullName')?.touched" class="error">
+      Name is required.
+    </div>
+
+    <label>Email:</label>
+    <input type="email" formControlName="email" />
+    <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+      Valid email is required.
+    </div>
+
+    <label>Password:</label>
+    <input type="password" formControlName="password" />
+    <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+      Minimum 6 characters required.
+    </div>
+
+    <label>Confirm Password:</label>
+    <input type="password" formControlName="confirmPassword" />
+    <div *ngIf="signupForm.hasError('mismatch') && signupForm.get('confirmPassword')?.touched" class="error">
+      Passwords do not match.
+    </div>
+
+    <button type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+
+    <p class="login-link">
+      Already have an account? <a routerLink="/login">Login here</a>
+    </p>
+  </form>
+</div>
+

@@ -1,0 +1,52 @@
+.chaos-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+  background-color: #f0f9ff; /* Light blue background like screenshot */
+  flex-wrap: wrap;
+}
+
+.chaos-text {
+  max-width: 500px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e0edff;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.chaos-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  color: #1e3a8a;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.cta-btn {
+  background-color: #2563eb; /* Tailwind blue-600 */
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #1d4ed8; /* Tailwind blue-700 */
+}
+
+.chaos-image img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}

@@ -1,4 +1,4 @@
-<app-header [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" />
+<!-- <app-header [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()" />
 <app-left-sidebar
   [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
   (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)"
@@ -6,4 +6,18 @@
 <app-main
   [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
   [screenWidth]="screenWidth()"
-/>
+/> -->
+
+<app-header [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"></app-header>
+
+<div class="layout-container">
+  <app-left-sidebar
+    [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+    (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)">
+  </app-left-sidebar>
+
+  <app-main
+    [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+    [screenWidth]="screenWidth()">
+  </app-main>
+</div>

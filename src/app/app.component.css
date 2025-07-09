@@ -1,0 +1,21 @@
+/* When sidebar is expanded */
+app-left-sidebar {
+  width: 220px; /* Was 260px — reduce to 220px */
+  transition: width 0.3s ease;
+}
+
+/* When sidebar is collapsed */
+app-left-sidebar.collapsed {
+  width: 60px; /* Was 80px — reduce to 60px */
+}
+
+/* Main section default */
+app-main {
+  margin-left: 220px; /* Match expanded sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+/* Main when sidebar is collapsed */
+app-main.main-with-collapsed-sidebar {
+  margin-left: 60px; /* Match collapsed sidebar */
+}

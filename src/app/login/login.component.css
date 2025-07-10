@@ -2,8 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  height: 100vh; /* Full screen height */
   background-color: #f4f4f4;
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .login-form {

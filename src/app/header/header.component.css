@@ -57,9 +57,9 @@
 
 
 
-/* Home and Login as simple links */
-.home-link,
-.login-link {
+/* Home and logout as simple links */
+.home-link
+ {
   color: white;
   font-size: 14px;
   font-weight: 500;
@@ -74,9 +74,20 @@
   color: #1e3a8a; /* Dark blue for home */
 }
 
-.login-link:hover {
-  background-color: #f8d7da;  /* Light red/pink background */
-  color: #dc3545;            /* Bootstrap's danger red */
+.logout {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 20px; /* pill shape */
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+}
+
+.logout:hover {
+  background-color: #f8d7da; /* light red background */
+  color: #dc3545; /* danger red text */
 }
 
 .right-section {

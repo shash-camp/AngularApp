@@ -38,6 +38,7 @@ export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
+   { path: 'home', component: HomeComponent },
 
   // ✅ Protected Routes (WITH layout)
   {
@@ -48,6 +49,8 @@ export const routes: Routes = [
       { path: 'products', component: ProductsComponent },
       { path: 'settings', component: SettingsComponent },
       { path: 'pages', component: PagesComponent },
+      
+
     ]
   },
 ];

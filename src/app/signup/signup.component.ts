@@ -28,13 +28,19 @@ export class SignupComponent {
     return pass === confirm ? null : { mismatch: true };
   }
 
-  onSubmit() {
-    if (this.signupForm.valid) {
-      console.log('Signup form values:', this.signupForm.value);
-      // Call API or service to register user
-    } else {
-      this.signupForm.markAllAsTouched();
-    }
+ onSubmit() {
+  if (this.signupForm.valid) {
+    const { fullName, email, password } = this.signupForm.value;
+
+    // Save user to localStorage
+    localStorage.setItem('user', JSON.stringify({ fullName, email, password }));
+
+    // Optional: navigate to login
+    window.location.href = '/login';
+  } else {
+    this.signupForm.markAllAsTouched();
   }
+}
+
 }
 

@@ -2,6 +2,7 @@
   background: #012a5b;
   transition: all 0.5s ease;
   position: fixed;
+  left: 0; /* ✅ ADD THIS LINE */
   z-index: 1;
   top: 60px;
   width: 16.5625rem;
@@ -9,6 +10,7 @@
   box-shadow: 0.063rem 0 1.25rem 0 #8690a3;
   overflow: hidden; /* Prevent both vertical & horizontal scroll */
 }
+
 
 /* If you want vertical scrolling when content overflows:
 overflow-y: auto;

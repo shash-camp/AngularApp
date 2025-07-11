@@ -22,35 +22,40 @@
 } */
 
 /* Base body styling */
+
+
 .body {
-  padding-top: 6rem; /* 60px header height */
+  padding-top: 6rem; 
   min-height: 100vh;
   transition: all 0.3s ease;
   background-color: #f4f7fa;
 }
 
-/* Dynamically added classes */
+
 .body-expanded {
-  padding-left: 16.5625rem; /* Full sidebar width */
+  padding-left: 16.5625rem; 
 }
 
 .body-collapsed {
-  padding-left: 5rem; /* Collapsed sidebar width */
+  padding-left: 5rem; 
 }
 
 .layout-container {
   display: flex;
 }
 
-/* ✅ This will offset content from the fixed sidebar */
+
 .main-content {
   flex: 1;
   padding: 1rem;
-  margin-left: 16.5625rem; /* Match sidebar width */
+  margin-left: 16.5625rem; 
   transition: margin-left 0.3s ease;
 }
 
-/* ✅ When sidebar is collapsed */
+
 .body-collapsed .main-content {
   margin-left: 5rem;
 }
+
+
+

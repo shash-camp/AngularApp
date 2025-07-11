@@ -1,5 +1,5 @@
 
-<!-- main.component.html -->
+
 <!-- <div class="body" [ngClass]="sizeClass()">
   <app-header [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"></app-header>
 
@@ -15,8 +15,7 @@
   </div>
 </div> -->
 
-
-<div class="body" [ngClass]="sizeClass()">
+<div class="body" [ngClass]="isLeftSidebarCollapsed() ? 'body-collapsed' : 'body-expanded'">
   <app-header [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"></app-header>
 
   <div class="layout-container">
@@ -30,4 +29,5 @@
     </div>
   </div>
 </div>
+
 

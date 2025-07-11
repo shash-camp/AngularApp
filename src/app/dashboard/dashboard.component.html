@@ -1,1 +1,53 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+  <h2>New Tasks</h2>
+
+  <!-- Add template reference with # -->
+  <input #titleInput type="text" placeholder="Task Title" [(ngModel)]="task.title" />
+  <input #dateInput type="date" [(ngModel)]="task.date" />
+  <input #assigneeInput type="text" placeholder="Assignee" [(ngModel)]="task.assignee" />
+
+  <!-- Add template ref to textarea -->
+  <textarea #detailsInput rows="4" placeholder="Add your task details" [(ngModel)]="task.details"></textarea>
+
+  <div class="icons">
+    <button title="Bold"><strong>A</strong></button>
+    <button title="Italic"><em>I</em></button>
+    <button title="Edit">✏️</button>
+  </div>
+
+  <!-- Add template ref to category div -->
+  <div class="categories" #categorySection>
+    <span 
+      *ngFor="let cat of categories"
+      [class.selected]="task.category === cat"
+      (click)="selectCategory(cat)">
+      {{ cat }} 
+    </span>
+  </div>
+
+  <!-- Add template ref to alert section -->
+  <div class="toggle-alert" #alertSection>
+    <label>Get alert for this task</label>
+    <input type="checkbox" [(ngModel)]="task.alert" />
+  </div>
+
+  <!-- Replace Edit button with dropdown -->
+  <div class="buttons">
+    <button (click)="createTask()" class="create">Create Task</button>
+
+    <div class="edit-dropdown">
+      <select [(ngModel)]="editSection" (change)="scrollToSection(editSection)">
+        <option value="">Edit...</option>
+        <option value="title">Task Title</option>
+        <option value="date">Date</option>
+        <option value="assignee">Assignee</option>
+        <option value="details">Details</option>
+        <option value="category">Category</option>
+        <option value="alert">Alert</option>
+      </select>
+    </div>
+
+    <button (click)="deleteTask()" class="delete">Delete</button>
+  </div>
+</div>
+

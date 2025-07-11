@@ -1,7 +1,7 @@
 .main-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;  /* important to let .spacer work */
+  justify-content: flex-start;  
   padding: 0 2rem;
   background-color: #1e3a8a;
   color: white;
@@ -11,11 +11,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-    /* border-top-left-radius: 12px;
-  border-top-right-radius: 12px; 
 
-   border-bottom-left-radius: 12px;  
-  border-bottom-right-radius: 12px */
 }
 
 .left-section {
@@ -25,20 +21,17 @@
 }
 
 .spacer {
-  flex: 1; /* This will push center-section and right-section to the right */
+  flex: 1; 
 }
 
 .center-section {
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-right: 40px; /* Add spacing between center and right */
+  margin-right: 40px; 
 }
 
-/* Rest of your CSS stays the same */
 
-
-/* Only Add should look like a button */
 .btn {
   padding: 8px 20px;
   border: none;
@@ -57,7 +50,7 @@
 
 
 
-/* Home and logout as simple links */
+
 .home-link
  {
   color: white;
@@ -71,7 +64,7 @@
 
 .home-link:hover {
   background-color: white;
-  color: #1e3a8a; /* Dark blue for home */
+  color: #1e3a8a; 
 }
 
 .logout {
@@ -80,14 +73,14 @@
   font-weight: 500;
   text-decoration: none;
   padding: 6px 14px;
-  border-radius: 20px; /* pill shape */
+  border-radius: 20px; 
   transition: background-color 0.3s, color 0.3s;
   background-color: transparent;
 }
 
 .logout:hover {
-  background-color: #f8d7da; /* light red background */
-  color: #dc3545; /* danger red text */
+  background-color: #f8d7da; 
+  color: #dc3545; 
 }
 
 .right-section {
@@ -124,5 +117,5 @@
   font-size: 22px;
   font-weight: bold;
   color: white;
-  margin-left: 2rem; /* 👈 Add this */
+  margin-left: 2rem; 
 }

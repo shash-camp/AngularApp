@@ -1,12 +1,12 @@
-<div class="dashboard">
+<!-- <div class="dashboard">
   <h2>New Tasks</h2>
 
-  <!-- Add template reference with # -->
+
   <input #titleInput type="text" placeholder="Task Title" [(ngModel)]="task.title" />
   <input #dateInput type="date" [(ngModel)]="task.date" />
   <input #assigneeInput type="text" placeholder="Assignee" [(ngModel)]="task.assignee" />
 
-  <!-- Add template ref to textarea -->
+
   <textarea #detailsInput rows="4" placeholder="Add your task details" [(ngModel)]="task.details"></textarea>
 
   <div class="icons">
@@ -15,7 +15,7 @@
     <button title="Edit">✏️</button>
   </div>
 
-  <!-- Add template ref to category div -->
+
   <div class="categories" #categorySection>
     <span 
       *ngFor="let cat of categories"
@@ -25,13 +25,13 @@
     </span>
   </div>
 
-  <!-- Add template ref to alert section -->
+  
   <div class="toggle-alert" #alertSection>
     <label>Get alert for this task</label>
     <input type="checkbox" [(ngModel)]="task.alert" />
   </div>
 
-  <!-- Replace Edit button with dropdown -->
+ 
   <div class="buttons">
     <button (click)="createTask()" class="create">Create Task</button>
 
@@ -51,3 +51,186 @@
   </div>
 </div>
 
+
+<div class="recent-tasks" *ngIf="taskList.length > 0">
+  <h3>Recent Tasks</h3>
+
+  <div *ngFor="let t of taskList" class="task-card">
+    <h4>{{ t.title }}</h4>
+    <p><strong>Date:</strong> {{ t.date }}</p>
+    <p><strong>Assignee:</strong> {{ t.assignee }}</p>
+    <p><strong>Details:</strong> {{ t.details }}</p>
+    <p><strong>Category:</strong> {{ t.category }}</p>
+    <p><strong>Alert:</strong> {{ t.alert ? 'Yes' : 'No' }}</p>
+  </div>
+</div> -->
+
+<!-- <div class="dashboard">
+  <h2>New Tasks</h2>
+
+  <input #titleInput type="text" placeholder="Task Title" [(ngModel)]="task.title" />
+  <input #dateInput type="date" [(ngModel)]="task.date" />
+  <input #assigneeInput type="text" placeholder="Assignee" [(ngModel)]="task.assignee" />
+  <textarea #detailsInput rows="4" placeholder="Add your task details" [(ngModel)]="task.details"></textarea>
+
+  <div class="icons">
+    <button title="Bold"><strong>A</strong></button>
+    <button title="Italic"><em>I</em></button>
+    <button title="Edit">✏️</button>
+  </div>
+
+  <div class="categories" #categorySection>
+    <span *ngFor="let cat of categories"
+          [class.selected]="task.category === cat"
+          (click)="selectCategory(cat)">
+      {{ cat }}
+    </span>
+  </div>
+
+  <div class="toggle-alert" #alertSection>
+    <label>Get alert for this task</label>
+    <input type="checkbox" [(ngModel)]="task.alert" />
+  </div>
+
+  <div class="buttons">
+    <button (click)="createTask()" class="create">
+      {{ isEditMode ? 'Update Task' : 'Create Task' }}
+    </button>
+    <button (click)="clearForm()" class="delete">Clear</button>
+  </div>
+</div> -->
+
+<!-- <div class="recent-tasks" *ngIf="taskList.length > 0">
+  <h3>Recent Tasks</h3>
+
+  <div *ngFor="let t of taskList; let i = index" class="task-card">
+    <h4>{{ t.title }}</h4>
+    <p><strong>Date:</strong> {{ t.date }}</p>
+    <p><strong>Assignee:</strong> {{ t.assignee }}</p>
+    <p><strong>Details:</strong> {{ t.details }}</p>
+    <p><strong>Category:</strong> {{ t.category }}</p>
+    <p><strong>Alert:</strong> {{ t.alert ? 'Yes' : 'No' }}</p>
+
+    <div class="buttons">
+      <button class="edit" (click)="editTask(i)">Edit</button>
+      <button class="delete" (click)="removeTask(i)">Delete</button>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="recent-tasks" *ngIf="taskList.length > 0">
+  <h3>Recent Tasks (Table Format)</h3>
+
+  <div class="table-wrapper">
+    <table class="task-table">
+      <tr>
+        <th>Title</th>
+        <td *ngFor="let t of taskList">{{ t.title }}</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td *ngFor="let t of taskList">{{ t.date }}</td>
+      </tr>
+      <tr>
+        <th>Assignee</th>
+        <td *ngFor="let t of taskList">{{ t.assignee }}</td>
+      </tr>
+      <tr>
+        <th>Details</th>
+        <td *ngFor="let t of taskList">{{ t.details }}</td>
+      </tr>
+      <tr>
+        <th>Category</th>
+        <td *ngFor="let t of taskList">{{ t.category }}</td>
+      </tr>
+      <tr>
+        <th>Alert</th>
+        <td *ngFor="let t of taskList">{{ t.alert ? 'Yes' : 'No' }}</td>
+      </tr>
+      <tr>
+        <th>Actions</th>
+        <td *ngFor="let t of taskList; let i = index">
+          <button class="edit" (click)="editTask(i)">Edit</button>
+          <button class="delete" (click)="removeTask(i)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div> -->
+
+<div class="container">
+      <div class="dashboard">
+  <h2>New Tasks</h2>
+
+  <input #titleInput type="text" placeholder="Task Title" [(ngModel)]="task.title" />
+  <input #dateInput type="date" [(ngModel)]="task.date" />
+  <input #assigneeInput type="text" placeholder="Assignee" [(ngModel)]="task.assignee" />
+  <textarea #detailsInput rows="4" placeholder="Add your task details" [(ngModel)]="task.details"></textarea>
+
+  <div class="icons">
+    <button title="Bold"><strong>A</strong></button>
+    <button title="Italic"><em>I</em></button>
+    <button title="Edit">✏️</button>
+  </div>
+
+  <div class="categories" #categorySection>
+    <span *ngFor="let cat of categories"
+          [class.selected]="task.category === cat"
+          (click)="selectCategory(cat)">
+      {{ cat }}
+    </span>
+  </div>
+
+  <div class="toggle-alert" #alertSection>
+    <label>Get alert for this task</label>
+    <input type="checkbox" [(ngModel)]="task.alert" />
+  </div>
+
+  <div class="buttons">
+    <button (click)="createTask()" class="create">
+      {{ isEditMode ? 'Update Task' : 'Create Task' }}
+    </button>
+    <button (click)="clearForm()" class="delete">Clear</button>
+  </div>
+</div>
+  
+ <div class="recent-tasks" *ngIf="taskList.length > 0">
+  <h3>Recent Tasks (Table Format)</h3>
+
+  <div class="table-wrapper">
+    <table class="task-table">
+      <tr>
+        <th>Title</th>
+        <td *ngFor="let t of taskList">{{ t.title }}</td>
+      </tr>
+      <tr>
+        <th>Date</th>
+        <td *ngFor="let t of taskList">{{ t.date }}</td>
+      </tr>
+      <tr>
+        <th>Assignee</th>
+        <td *ngFor="let t of taskList">{{ t.assignee }}</td>
+      </tr>
+      <tr>
+        <th>Details</th>
+        <td *ngFor="let t of taskList">{{ t.details }}</td>
+      </tr>
+      <tr>
+        <th>Category</th>
+        <td *ngFor="let t of taskList">{{ t.category }}</td>
+      </tr>
+      <tr>
+        <th>Alert</th>
+        <td *ngFor="let t of taskList">{{ t.alert ? 'Yes' : 'No' }}</td>
+      </tr>
+      <tr>
+        <th>Actions</th>
+        <td *ngFor="let t of taskList; let i = index">
+          <button class="edit" (click)="editTask(i)">Edit</button>
+          <button class="delete" (click)="removeTask(i)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+</div>

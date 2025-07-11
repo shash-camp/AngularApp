@@ -32,6 +32,7 @@
 }
 
 
+
 .btn {
   padding: 8px 20px;
   border: none;
@@ -44,27 +45,38 @@
 }
 
 .add-btn {
-  background-color: #28a745;
+  background-color: #28a745; /* Green */
   color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Smooth animation */
+}
+
+.add-btn:hover {
+  background-color: #218838; /* Slightly darker green */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transform: translateY(-2px); /* Lift effect */
+  color: #fff;
 }
 
 
 
-
-.home-link
- {
+.home-link {
   color: white;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   padding: 6px 14px;
   border-radius: 20px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
 }
 
 .home-link:hover {
   background-color: white;
-  color: #1e3a8a; 
+  color: #1e3a8a;
+  border-radius: 999px; /* Fully rounded pill shape */
 }
 
 .logout {

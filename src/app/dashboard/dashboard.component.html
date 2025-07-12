@@ -35,42 +35,37 @@
 </div>
   
  <div class="recent-tasks" *ngIf="taskList.length > 0">
-  <h3>Recent Tasks (Table Format)</h3>
+  <h3>Recent Tasks</h3>
 
   <div class="table-wrapper">
     <table class="task-table">
-      <tr>
-        <th>Title</th>
-        <td *ngFor="let t of taskList">{{ t.title }}</td>
-      </tr>
-      <tr>
-        <th>Date</th>
-        <td *ngFor="let t of taskList">{{ t.date }}</td>
-      </tr>
-      <tr>
-        <th>Assignee</th>
-        <td *ngFor="let t of taskList">{{ t.assignee }}</td>
-      </tr>
-      <tr>
-        <th>Details</th>
-        <td *ngFor="let t of taskList">{{ t.details }}</td>
-      </tr>
-      <tr>
-        <th>Category</th>
-        <td *ngFor="let t of taskList">{{ t.category }}</td>
-      </tr>
-      <tr>
-        <th>Alert</th>
-        <td *ngFor="let t of taskList">{{ t.alert ? 'Yes' : 'No' }}</td>
-      </tr>
-      <tr>
-        <th>Actions</th>
-        <td *ngFor="let t of taskList; let i = index">
-          <button class="edit" (click)="editTask(i)">Edit</button>
-          <button class="delete" (click)="removeTask(i)">Delete</button>
-        </td>
-      </tr>
-    </table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Assignee</th>
+      <th>Details</th>
+      <th>Category</th>
+      <th>Alert</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of taskList; let i = index">
+      <td>{{ t.title }}</td>
+      <td>{{ t.date }}</td>
+      <td>{{ t.assignee }}</td>
+      <td>{{ t.details }}</td>
+      <td>{{ t.category }}</td>
+      <td>{{ t.alert ? 'Yes' : 'No' }}</td>
+      <td>
+        <button class="edit" (click)="editTask(i)">Edit</button>
+        <button class="delete" (click)="removeTask(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
   </div>
 </div>
 </div>

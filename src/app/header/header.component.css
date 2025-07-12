@@ -88,6 +88,7 @@
   border-radius: 20px; 
   transition: background-color 0.3s, color 0.3s;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .logout:hover {
@@ -129,5 +130,5 @@
   font-size: 22px;
   font-weight: bold;
   color: white;
-  margin-left: 2rem; 
+  margin-left: 2.5rem; 
 }

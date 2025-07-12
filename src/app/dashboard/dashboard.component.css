@@ -89,50 +89,73 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+.recent-tasks {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+  margin-bottom: 2rem;
+}
+
+.recent-tasks h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  border-left: 6px solid #ff6b6b;
+  padding-left: 10px;
+}
 
 .table-wrapper {
   overflow-x: auto;
+  border-radius: 8px;
 }
 
 .task-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-.task-table th,
-.task-table td {
-  padding: 12px;
-  border: 1px solid #ddd;
-  text-align: left;
-  vertical-align: top;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .task-table th {
-  background-color: #f7f7f7;
-  font-weight: bold;
-  white-space: nowrap;
+  background-color: #1e3a8a;
+  color: #fff;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.task-table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+.task-table td,
+.task-table th {
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #e2e2e2;
 }
 
 .task-table td {
-  background-color: #fff;
+  color: #444;
 }
 
-.task-table button {
-  margin-right: 5px;
-  padding: 4px 8px;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  cursor: pointer;
+.task-table td button {
+  transition: transform 0.2s ease;
 }
 
-.task-table .edit {
-  background-color: #ffc107;
-  color: white;
+.task-table td button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
-.task-table .delete {
-  background-color: #dc3545;
-  color: white;
+.task-table .edit::before {
+  content: "✏️ ";
+}
+
+.task-table .delete::before {
+  content: "🗑️ ";
 }
